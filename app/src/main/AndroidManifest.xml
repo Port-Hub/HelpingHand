@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".EContact"
+            android:exported="false" />
+        <activity
+            android:name=".Hospital"
+            android:exported="false" />
+        <activity
+            android:name=".MedicalHistory"
+            android:exported="false" />
+        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity android:name=".MainActivity">

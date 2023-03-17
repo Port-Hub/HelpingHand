@@ -2,6 +2,7 @@ package coding.insight.login2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,7 +11,10 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
-
+    public void openDashboard(){
+        Intent intent =new Intent(this, Dashboard.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         TextView loginbtn = (TextView) findViewById(R.id.loginBtn);
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if(username.getText().toString().isEmpty()){
@@ -44,14 +49,17 @@ public class MainActivity extends AppCompatActivity {
                 else if(username.getText().toString().equals("romariokavin@gmail.com") && password.getText().toString().equals("Romario@1")){
                     //correct
                     Toast.makeText(MainActivity.this,"LOGIN SUCCESSFUL",Toast.LENGTH_SHORT).show();
+                    openDashboard();
 
                 }else
                     //incorrect
                     Toast.makeText(MainActivity.this,"LOGIN FAILED !!!",Toast.LENGTH_SHORT).show();
             }
+
         });
 
 
 
     }
+
 }
