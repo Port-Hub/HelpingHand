@@ -6,8 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
 
 public class Dashboard extends AppCompatActivity {
     public void openMedhistory(){
@@ -22,6 +25,11 @@ public class Dashboard extends AppCompatActivity {
         Intent intent =new Intent(this, EContact.class);
         startActivity(intent);
     }
+    public void heart(){
+        Intent intent =new Intent(this, heartrate.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +37,14 @@ public class Dashboard extends AppCompatActivity {
         LinearLayout emergency = (LinearLayout) findViewById(R.id.EmergencyContacts);
         LinearLayout hospital = (LinearLayout) findViewById(R.id.Hospitals);
         LinearLayout med = (LinearLayout) findViewById(R.id.MedHistory);
+        LinearLayout hr = (LinearLayout) findViewById(R.id.LiveHeart);
+        hr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                heart();
 
+//                Toast.makeText(Dashboard.this,"Hospital",Toast.LENGTH_SHORT).show();
+            }});
         hospital.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
