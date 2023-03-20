@@ -6,13 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.net.Uri;
-import android.os.Bundle;
-import android.widget.MediaController;
-import android.widget.VideoView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
 
 
 public class Dashboard extends AppCompatActivity {
+    public static final String ACCOUNT_SID = "AC669861b72f743084da66fb7741b656a9";
+    public static final String AUTH_TOKEN = "889a052bb9fd48de8e3e694a14bd2743";
     public void openMedhistory(){
         Intent intent =new Intent(this, MedicalHistory.class);
         startActivity(intent);
@@ -29,6 +33,7 @@ public class Dashboard extends AppCompatActivity {
         Intent intent =new Intent(this, heartrate.class);
         startActivity(intent);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
